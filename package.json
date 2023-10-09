@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "start": "node server.js",
     "dev": "webpack --watch",
     "build": "webpack --mode production --progress"
   },
@@ -19,6 +20,8 @@
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
+    "@playwright/test": "^1.38.1",
+    "@types/node": "^20.8.3",
     "autoprefixer": "^9.7.6",
     "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "~6.4.1",

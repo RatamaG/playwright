@@ -1,0 +1,33 @@
+<div class="py-4 mb-2">
+  <h3 class="d-inline-block">Admins</h3>
+  <div class="float-end">
+    <%= linkTo(newAdminsPath(), {class: "btn btn-primary"}) { %>
+      Create New Admin
+    <% } %>
+  </div>
+</div>
+
+<table class="table table-hover table-bordered">
+  <thead class="thead-light">
+    <th>Email</th><th>Password</th><th>Role</th>
+    <th>&nbsp;</th>
+  </thead>
+  <tbody>
+    <%= for (admin) in admins { %>
+      <tr>
+        <td class="align-middle"><%= admin.Email %></td><td class="align-middle"><%= admin.Password %></td><td class="align-middle"><%= admin.Role %></td>
+        <td>
+          <div class="float-end">
+            <%= linkTo(adminPath({ admin_id: admin.ID }), {class: "btn btn-info", body: "View"}) %>
+            <%= linkTo(editAdminPath({ admin_id: admin.ID }), {class: "btn btn-warning", body: "Edit"}) %>
+            <%= linkTo(adminPath({ admin_id: admin.ID }), {class: "btn btn-danger", "data-method": "DELETE", "data-confirm": "Are you sure?", body: "Destroy"}) %>
+          </div>
+        </td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <%= paginator(pagination) %>
+</div>
