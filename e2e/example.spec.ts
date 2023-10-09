@@ -13,4 +13,5 @@ test('test', async ({ page }) => {
       const statusCode = response.status();
       expect(statusCode).toBe(200);
   }
+  await expect(page).toHaveURL(/admins/);
 });
