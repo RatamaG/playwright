@@ -22,7 +22,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install golang-go
         go get -u -v github.com/gobuffalo/buffalo/buffalo
-    - name: Run Buffalo (Replace with your Buffalo commands)
+    - name: Run Buffalo
       run: buffalo dev  # Replace with the actual Buffalo command you need to run
     - name: Run Playwright tests
       run: npx playwright test
